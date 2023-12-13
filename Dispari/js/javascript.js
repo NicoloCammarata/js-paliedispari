@@ -8,7 +8,7 @@
 
 
 
-const myUl = document.getElementById("sceltaPari")
+/*const myUl = document.getElementById("sceltaPari")
 
 const newLi = document.createElement('li');
 newLi.append("Pari");
@@ -32,11 +32,19 @@ nuovoLi.addEventListener('click', function () {
     console.log(" hai scelto dispari")
     
 })
+*/
 
 
-//const ParioDispari = prompt("Pari o Dispari")
+/*if((nScelto + numeroRandom) % 2 == 0 && newLi.console.log(" hai scelto pari")){
+    console.log('Vinto')
+}
+else{
+    console.log("Perso")
+}*/
 
-const nScelto = prompt("n. tra 1 e 5")
+const ParioDispari = prompt("Pari o Dispari")
+
+const nScelto = parseInt( prompt("n. tra 1 e 5"));
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -45,17 +53,28 @@ function getRndInteger(min, max) {
 
 let numeroRandom = getRndInteger(1, 5);
 
-console.log(numeroRandom);
+console.log("n. random" + numeroRandom);
 
+let totale = nScelto + numeroRandom;
 
+console.log(totale);
 
-
-if((nScelto + numeroRandom) % 2 == 0 && newLi.console.log(" hai scelto pari")){
-    console.log('Vinto')
+if((totale % 2) == 0 && ParioDispari == 'p'){
+    console.log("vinto")
 }
-else{
-    console.log("Perso")
+else if((totale % 2) != 0 && ParioDispari == 'p'){
+    console.log("perso")
 }
+else if((totale % 2) != 0 && ParioDispari == 'd'){
+    console.log("vinto")
+}
+else if((totale % 2) == 0 && ParioDispari == 'd'){
+    console.log("perso")
+}
+
+
+
+
 
 
 
